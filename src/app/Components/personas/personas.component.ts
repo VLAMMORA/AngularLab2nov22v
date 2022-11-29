@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./personas.component.css']
 })
 export class PersonasComponent implements OnInit {
-
+//Modelo
   Mipersona:any = {
        "userId": "",
        "title": "",
