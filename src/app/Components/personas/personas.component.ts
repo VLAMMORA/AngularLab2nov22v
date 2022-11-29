@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiserviceService } from 'src/app/Services/apiservice.service';
-
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-personas',
   templateUrl: './personas.component.html',
@@ -8,13 +8,13 @@ import { ApiserviceService } from 'src/app/Services/apiservice.service';
 })
 export class PersonasComponent implements OnInit {
 
+  Mipersona:any = {
+       "userId": "",
+       "title": "",
+       "body": ""
+  }
 
-//   mipersona ={
-//     "userId": 11111111,
-    
-//     "title": "z<z<z<z<z",
-//     "body": "xzxzxzxzx"
-//  }
+
   constructor(private _servicio:ApiserviceService) { }
 
   ngOnInit(): void {
@@ -24,17 +24,17 @@ export class PersonasComponent implements OnInit {
 
 
 
-  agregar(persona:any){
-  
- 
-    this._servicio.agregar(persona).subscribe(data=>{
-        
+  agregar(){
+
+    console.log(this.Mipersona)
+    this._servicio.agregar(this.Mipersona).subscribe(data=>{
+
 
       console.log(data);
 
     })
 
-    
+
   }
 
   Test(){
